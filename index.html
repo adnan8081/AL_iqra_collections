@@ -19,32 +19,32 @@
 
   <section class="hero">
   <section class="products">
-  <div class="product-card">
-    <img src="https://via.placeholder.com/200x250?text=Kurti+2" alt="Kurti 2" />
-    <h3>Printed Kurti</h3>
-    <p>₹999</p>
-    <button onclick="alert('Added to cart')">Add to Cart</button>
+  <div class="product-card gallery-card">
+  <div class="image-preview">
+    <img id="main-image" src="https://via.placeholder.com/200x250?text=Kurti+Front" alt="Main Product Image" />
+    <div class="thumbnail-row">
+      <img src="https://via.placeholder.com/60x60?text=Front" onclick="changeImage(this)" />
+      <img src="https://via.placeholder.com/60x60?text=Back" onclick="changeImage(this)" />
+      <img src="https://via.placeholder.com/60x60?text=Closeup" onclick="changeImage(this)" />
+    </div>
   </div>
-
-  <div class="product-card">
-    <img src="https://via.placeholder.com/200x250?text=Saree+2" alt="Saree 2" />
-    <h3>Designer Saree</h3>
-    <p>₹1599</p>
-    <button onclick="alert('Added to cart')">Add to Cart</button>
-  </div>
+  <h3>Floral Kurti</h3>
+  <p>₹799</p>
+  <button onclick="addToCart('Floral Kurti', 799)">Add to Cart</button>
+</div>
 
   <h2>Our Collection</h2>
   <div class="product-card">
     <img src="https://via.placeholder.com/200x250?text=Kurti+1" alt="Kurti 1" />
     <h3>Floral Kurti</h3>
     <p>₹799</p>
-    <button onclick="alert('Added to cart')">Add to Cart</button>
+    <button onclick="addToCart('Floral Kurti',799)">Add to Cart</button>
   </div>
   <div class="product-card">
     <img src="https://via.placeholder.com/200x250?text=Saree+1" alt="Saree 1" />
     <h3>Silk Saree</h3>
     <p>₹1299</p>
-    <button onclick="alert('Added to cart')">Add to Cart</button>
+    <button onclick="addToCart('Silk Saree',1299)">Add to Cart</button>
   </div>
 </section>
 
@@ -70,6 +70,44 @@
 ">
   💬 Chat with us
 </a>
+<div id="cart">
+  <h3>Your Cart</h3>
+  <ul id="cart-items"></ul>
+  <p>Total: ₹<span id="cart-total">0</span></p>
+  <button onclick="clearCart()">Clear Cart</button>
+  <button onclick="payNow()">Pay Now</button>
+
+</div>
+
+<style>
+#cart {
+  position: fixed;
+  top: 60px;
+  right: 20px;
+  background-color: white;
+  border: 1px solid #ccc;
+  padding: 15px;
+  border-radius: 10px;
+  width: 250px;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+  z-index: 999;
+}
+#cart h3 {
+  margin-top: 0;
+}
+#cart ul {
+  list-style: none;
+  padding: 0;
+  max-height: 200px;
+  overflow-y: auto;
+}
+#cart ul li {
+  display: flex;
+  justify-content: space-between;
+  margin: 8px 0;
+}
+</style>
+<script src="https://checkout.razorpay.com/v1/checkout.js"></script>
 
 </body>
 </html>
