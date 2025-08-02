@@ -73,3 +73,32 @@ footer {
   color: #e91e63;
   font-weight: bold;
 }
+
+.gallery-card .image-preview {
+  text-align: center;
+}
+
+#main-image {
+  width: 100%;
+  height: auto;
+  border-radius: 10px;
+  margin-bottom: 10px;
+}
+
+.thumbnail-row {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+}
+
+.thumbnail-row img {
+  width: 60px;
+  height: 60px;
+  cursor: pointer;
+  border: 2px solid transparent;
+  border-radius: 5px;
+}
+
+.thumbnail-row img:hover {
+  border-color: #e91e63;
+}
